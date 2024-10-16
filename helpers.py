@@ -1,4 +1,5 @@
 import numpy as np
+import itertools
 
 # if param is iterable with two elements, a value from a distribution is used
 def get_param_value(param, dist = 'uniform'):
@@ -18,3 +19,9 @@ def get_param_value(param, dist = 'uniform'):
     
     print ("Invalid option!")
     return 0
+
+
+def powerset(s, op):    
+    T = itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
+    return [op.join(t) for t in T if t]
+#    # sestavi vse možne podmnožice seta s, z velikostmi do len(s+1) in jih združi v en sam iterable (from_iterable)

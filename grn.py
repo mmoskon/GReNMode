@@ -1,12 +1,8 @@
-import itertools
+
 import numpy as np
-
 import simulator
+from helpers import powerset
 
-def powerset(s, op):    
-    T = itertools.chain.from_iterable(itertools.combinations(s, r) for r in range(len(s)+1))
-    return [op.join(t) for t in T if t]
-#    # sestavi vse možne podmnožice seta s, z velikostmi do len(s+1) in jih združi v en sam iterable (from_iterable)
 
 class grn:
     def __init__(self):
